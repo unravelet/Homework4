@@ -14,7 +14,7 @@
     <string name="images_are_not_displayed">Images are not displayed</string>
     <string name="key_display_images">display_images</string>
     <string name="default_value">true</string>
-    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_settings">Settings</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
