@@ -29,6 +29,8 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
 
         getRSSFeed()
 
+        getSettings()
+
 
 
     }

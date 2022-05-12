@@ -10,8 +10,14 @@ import androidx.recyclerview.widget.RecyclerView
 import at.technikum_wien.tscheppen.homework4.data.NewsItem
 import at.technikum_wien.tscheppen.homework4.R
 import com.bumptech.glide.Glide
+import java.lang.IllegalArgumentException
 
-class ListAdapter(private val context: Context, items: List<NewsItem> = listOf()) : RecyclerView.Adapter<ListAdapter.ItemViewHolder>() {
+class ListAdapter(private val context: Context, items: List<NewsItem> = listOf()) :
+    RecyclerView.Adapter<ListAdapter.ItemViewHolder>() {
+    companion object {
+        const val VIEW_ITEM_TOP = 0
+        const val VIEW_ITEM_NORMAL = 1
+    }
     var items = items
         set(value) {
             field = value
@@ -43,10 +49,25 @@ class ListAdapter(private val context: Context, items: List<NewsItem> = listOf()
     //usually involves inflating a layout from xml and returning the holder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val context = parent.context
-        val layoutIdForListItem: Int = R.layout.list_item
+
+        val layoutIdForListItem = when(viewType) {
+            VIEW_ITEM_TOP -> {
+                R.layout.list_item_top
+            }
+            VIEW_ITEM_NORMAL -> {
+                R.layout.list_item
+            }
+            else -> {
+                throw IllegalArgumentException("Invalid view type $viewType")
+            }
+        }
+
         val inflater = LayoutInflater.from(context)
         val view = inflater.inflate(layoutIdForListItem, parent, false)
         return ItemViewHolder(view)
+
+
+
     }
 
     //involves populating data into the item through holder
@@ -57,5 +78,13 @@ class ListAdapter(private val context: Context, items: List<NewsItem> = listOf()
     //return the total count of items in the list
     override fun getItemCount(): Int {
         return items.size
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return if (position == 0) {
+            VIEW_ITEM_TOP
+        } else {
+            VIEW_ITEM_NORMAL
+        }
     }
 }

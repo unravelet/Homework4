@@ -62,14 +62,14 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="300dp"
         android:layout_column="1"
         android:layout_row="2">
 
         <LinearLayout
 
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:id="@+id/linearLayout3">
 
@@ -80,11 +80,13 @@
                 android:textSize="16sp"
                 tools:text="description" />
 
+
         </LinearLayout>
     </ScrollView>
 
 
     <Button
+        android:id="@+id/details_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#B1B1B1"
