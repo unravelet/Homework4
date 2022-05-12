@@ -1,0 +1,29 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+        <EditTextPreference
+            app:key="@string/key_settings_url"
+            app:title="@string/settings_edit_text_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <CheckBoxPreference
+            app:defaultValue="@bool/settings_images_displayed_default"
+            app:key="@string/key_display_images"
+            app:summaryOff="@string/images_are_not_displayed"
+            app:summaryOn="@string/images_are_displayed"
+            app:title="@string/display_images"
+        />
+
+        <CheckBoxPreference
+            app:defaultValue="@bool/settings_images_downloaded_background"
+            app:key="@string/key_download_images"
+            app:summaryOff="@string/summary_off_images_not_downloaded_in_background"
+            app:summaryOn="@string/summary_images_in_background"
+            app:title="@string/download_in_background"
+            />
+
+
+
+
+</PreferenceScreen>

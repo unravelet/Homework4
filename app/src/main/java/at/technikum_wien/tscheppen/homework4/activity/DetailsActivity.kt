@@ -2,9 +2,11 @@ package at.technikum_wien.tscheppen.homework4.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import at.technikum_wien.tscheppen.homework4.R
 import at.technikum_wien.tscheppen.homework4.data.NewsItem
+import com.bumptech.glide.Glide
 
 class DetailsActivity : AppCompatActivity() {
     companion object {
@@ -18,10 +20,12 @@ class DetailsActivity : AppCompatActivity() {
         if (item != null) {
             findViewById<TextView>(R.id.tv_title).text = item.title
             findViewById<TextView>(R.id.tv_description).text = item.description
-            findViewById<TextView>(R.id.tv_author).text = item.author
+            val itemViewImage = findViewById<ImageView>(R.id.imageView)
+            Glide.with(this).load(item.imageUrl).into(itemViewImage)
+            /*findViewById<TextView>(R.id.tv_author).text = item.author
             findViewById<TextView>(R.id.tv_image_url).text = item.imageUrl
             findViewById<TextView>(R.id.tv_publication_date).text = item.publicationDate.toString()
-            findViewById<TextView>(R.id.tv_keywords).text = item.keywords.joinToString("\n")
+            findViewById<TextView>(R.id.tv_keywords).text = item.keywords.joinToString("\n")*/
         }
     }
 }

@@ -6,7 +6,7 @@ import at.technikum_wien.tscheppen.homework4.data.NewsItem
 import kotlinx.coroutines.launch
 
 class NewsListViewModel : ViewModel(){
-    private val _newsItems = MutableLiveData<List<NewsItem>>(listOf())
+    private val _newsItems = MutableLiveData<List<NewsItem>?>(listOf())
     private val _error = MutableLiveData<Boolean>(false)
     private val _busy = MutableLiveData<Boolean>(true)
 
@@ -14,7 +14,7 @@ class NewsListViewModel : ViewModel(){
         reload()
     }
 
-    val newsItems : LiveData<List<NewsItem>>
+    val newsItems : MutableLiveData<List<NewsItem>?>
         get() = _newsItems
     val error : LiveData<Boolean>
         get() = _error

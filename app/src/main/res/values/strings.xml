@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Homework4</string>
+    <string name="app_name">News Reader</string>
     <string name="an_error_occurred_please_try_again_later">an error occurred please try again later</string>
     <string name="reload">Reload</string>
     <string name="title">Title</string>
@@ -14,4 +14,29 @@
     <string name="images_are_not_displayed">Images are not displayed</string>
     <string name="key_display_images">display_images</string>
     <string name="default_value">true</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="download_in_background">Download Images in the Background</string>
+    <string name="summary_images_in_background">Images will be downloaded in the background</string>
+    <string name="summary_off_images_not_downloaded_in_background">images will not be downloaded in the background</string>
+    <string name="key_download_images">download images</string>
+    <string name="reload_title">Reload</string>
+    <string name="key_settings_url">settings_url</string>
+    <string name="settings_edit_text_title">News Feed URL</string>
+    <string name="btn_text_full_story">full story</string>
+    <string name="new_image">new_image</string>
 </resources>
