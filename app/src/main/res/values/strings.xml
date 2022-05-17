@@ -15,7 +15,9 @@
     <string name="key_display_images">display_images</string>
     <string name="default_value">true</string>
     <string name="title_activity_settings">Settings</string>
-
+    <string name="input_error">Input must not be empty.</string>
+    <string name="constraint_error">This entry already exists.</string>
+    <string name="general_error">An error occurred. Please try again later.</string>
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>

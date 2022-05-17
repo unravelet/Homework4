@@ -1,57 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="12dp">
+    android:padding="8dp"
+    >
 
+    <FrameLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/new_image"
+            tools:srcCompat="@tools:sample/avatars"/>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_item"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_item"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="@string/new_image" />
+    </FrameLayout>
 
-    <TextView
-        android:id="@+id/tv_item"
-        android:layout_width="264dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
-        android:textSize="21sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="some article" />
+        android:orientation="vertical"
+        android:paddingLeft="8dp"
+        android:paddingStart="8dp"
+        tools:ignore="RtlHardcoded,RtlSymmetry">
 
-    <TextView
-        android:id="@+id/tv_item_author"
-        android:layout_width="262dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="4dp"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/tv_item"
-        tools:text="author" />
+        <TextView
+            android:id="@+id/tv_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            tools:text="Title"
+            />
+        <TextView
+            android:id="@+id/tv_item_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            tools:text="Author"
+            />
+        <TextView
+            android:id="@+id/tv_item_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            tools:text="YYYY-MM-DD"
+            />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_item_date"
-        android:layout_width="271dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/tv_item_author"
-        tools:text="date" />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
