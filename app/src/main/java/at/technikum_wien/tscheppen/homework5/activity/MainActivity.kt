@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
             return true
         }
         else if (itemId == R.id.menu_reload) {
-            //viewModel.reload()
+            viewModel.reload()
             return true
         } else {
             return super.onOptionsItemSelected(item)
@@ -102,12 +102,12 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
 
     fun getRSSFeed(){
         //val viewModel by viewModels<NewsListViewModel>()
-        val entries = viewModel._newsItems
+        val entries = viewModel.newsItems
         val recyclerView = findViewById<RecyclerView>(R.id.rv_list)
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
 
-        val adapter = ListAdapter(this, entries)
+        val adapter = ListAdapter(this)
         recyclerView.adapter = adapter
 
         adapter.itemClickListener = {
@@ -120,11 +120,11 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
 
         val errorTextView = findViewById<TextView>(R.id.tv_error)
 
-        /*viewModel._error.observe(this) {
+        viewModel.error.observe(this) {
             errorTextView.visibility = if (it) View.VISIBLE else View.GONE
-        }*/
+        }
 
-        viewModel._newsItems.observe(this) {
+        viewModel.newsItems.observe(this) {
             if (it != null) {
                 adapter.items = it
             }
